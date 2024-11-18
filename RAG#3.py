@@ -23,7 +23,6 @@ print(documents[0].page_content)
 
 
 # %%
-
 # 2. 문자 단위로 나누기
 
 from langchain_text_splitters import CharacterTextSplitter
@@ -63,7 +62,6 @@ print(chunks[0])
 
 
 # %%
-
 # 3. 조금 더 의미적으로 나누기 (RecursiveCharacterTextSplitter) **
 
 from langchain_text_splitters import RecursiveCharacterTextSplitter
@@ -86,7 +84,6 @@ print(chunks[0])
 
 
 # %%
-
 # ---- 2. 임베딩 (Embedding) ---- #
 # 1. OpenAI Embeddings
 
@@ -121,7 +118,6 @@ embedded_query[:10]
 
 
 # %%
-
 from sklearn.metrics.pairwise import cosine_similarity
 
 embedded_query = text_embedding_model.embed_query("스트레스가 심할 때 대처할 수 있는 방법은 무엇인가요?")

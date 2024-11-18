@@ -16,6 +16,7 @@ load_dotenv('.env')
 # model
 llm = ChatOpenAI(model="gpt-3.5-turbo")
 
+
 # %%
 
 # 'name'과 'age'라는 두 개의 변수를 사용하는 프롬프트 템플릿을 정의
@@ -28,6 +29,8 @@ prompt_template = PromptTemplate.from_template(template_text)
 prompt = prompt_template.format(name='홍길동', age=32)
 
 prompt
+
+
 # %%
 
 # PromptTemplate 인스턴스를 생성
@@ -50,6 +53,7 @@ chain = merged_prompt | llm | StrOutputParser()
 # 체인 실행
 chain.invoke({"name": "홍길동", "age": 32, "city": "대전", "job": "머신러닝 엔지니어", "language": "영어"})
 
+
 # %%
 
 '''
@@ -66,6 +70,7 @@ chat_prompt = ChatPromptTemplate.from_messages([
 
 messages = chat_prompt.format_messages(user_input="현재 파라미터가 가장 많은 llm 모델은 무엇인가요?")
 messages
+
 
 # %%
 
@@ -94,5 +99,3 @@ chat_prompt2 = ChatPromptTemplate.from_messages([
     SystemMessagePromptTemplate.from_template("이 챗봇은 LLM 과학자입니다. LLM과 관련된 질문에 답변할 수 있습니다."),
     HumanMessagePromptTemplate.from_template("{user_input}"),
 ])
-
-# %%

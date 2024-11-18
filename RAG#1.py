@@ -15,6 +15,7 @@ loader = WebBaseLoader(url)
 documents = loader.load()
 print(documents[0].page_content)
 
+
 # %%
 # ---- RAG 2단계 : 텍스트 분할 ---- #
 

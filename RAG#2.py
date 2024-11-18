@@ -4,7 +4,6 @@ load_dotenv('.env')
 
 
 # %%
-
 # ---- RAG 과정 ---- #
 # 1. 문서를 가져옴 (Document Loader)
 # 2. 문서를 잘 나눔 (Text Splitter)
@@ -15,9 +14,7 @@ load_dotenv('.env')
 
 
 # %%
-
 # ---- 1. 웹 문서 불러오기 ---- #
-
 # 1. 문서를 가져온다. (Document Loader)
 # 웹문서
 # 텍스트
@@ -53,7 +50,6 @@ print(documents[0])
 import requests
 from bs4 import BeautifulSoup
 from langchain.docstore.document import Document
-
 
 url1 = "https://namu.wiki/w/%EC%96%B8%EC%96%B4%20%EB%AA%A8%EB%8D%B8"
 url2 = "https://namu.wiki/w/ChatGPT"
@@ -181,4 +177,3 @@ documents = loader.load()
 
 print(len(documents))
 print(documents[-1])
-# %%

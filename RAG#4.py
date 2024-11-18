@@ -16,7 +16,6 @@ pdf_path = './data/replicating anomalies.pdf'
 loader = PyPDFLoader(pdf_path)
 documents = loader.load()
 
-
 # 2. 텍스트 분할
 text_splitter = RecursiveCharacterTextSplitter.from_tiktoken_encoder(
     chunk_size=500, 
@@ -25,7 +24,6 @@ text_splitter = RecursiveCharacterTextSplitter.from_tiktoken_encoder(
 )
 
 splited_documents = text_splitter.split_documents(documents)
-
 
 # 3. 임베딩 + 저장
 embeddings_model = OpenAIEmbeddings()
@@ -38,7 +36,6 @@ db = Chroma.from_texts(
     persist_directory='./db/chroma_db',
     collection_metadata={'hnsw:space': 'cosine'}    # l2 is default
 )
-
 
 # 4. DB 검색
 query = "What is the main idea of the paper?"
@@ -83,7 +80,6 @@ print(mmr_docs[0].page_content)
 
 # %%
 # ---- 검색 도구(Retrivers)들을 사용하기 ---- #
-
 # 1. 제일 유사한 n개의 문서를 가져오기
 
 query = "What is q-anomalies?"

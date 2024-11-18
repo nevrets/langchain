@@ -13,6 +13,7 @@ from langchain_core.prompts import PromptTemplate
 from dotenv import load_dotenv
 load_dotenv('.env')
 
+
 # %%
 '''
 AttributeError: 'bool' object has no attribute 'lookup'
